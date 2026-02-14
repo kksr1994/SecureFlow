@@ -1,0 +1,26 @@
+
+# Python stuff
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.Python
+*.so
+*.egg
+*.egg-info/
+dist/
+build/
+venv/
+env/
+
+# IDE stuff
+.vscode/
+.idea/
+
+# Our data (don't commit scan results)
+data/scans/*
+*.log
+
+# Secrets
+.env
+config.local.yaml
