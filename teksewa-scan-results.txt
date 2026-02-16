@@ -1,0 +1,40 @@
+[dns-waf-detect:cloudflare] [dns] [info] teksewa.com
+[missing-sri] [http] [info] https://teksewa.com ["https://www.googletagmanager.com/gtag/js?id=G-6PFDVRX4FD","https://fonts.googleapis.com/css2?family=Raleway:wght@400;600;700&family=Poppins:wght@200;300;400;500;600&family=Roboto Slab:wght@200;300;400;500;600&display=swap"]
+[waf-detect:cloudflare] [http] [info] https://teksewa.com
+[deprecated-tls:tls_1.1] [ssl] [info] teksewa.com:443 ["tls11"]
+[deprecated-tls:tls_1.0] [ssl] [info] teksewa.com:443 ["tls10"]
+[tls-version] [ssl] [info] teksewa.com:443 ["tls10"]
+[tls-version] [ssl] [info] teksewa.com:443 ["tls11"]
+[tls-version] [ssl] [info] teksewa.com:443 ["tls12"]
+[tls-version] [ssl] [info] teksewa.com:443 ["tls13"]
+[weak-cipher-suites:tls-1.0] [ssl] [low] teksewa.com:443 ["[tls10 TLS_ECDHE_ECDSA_WITH_AES_128_CBC_SHA]"]
+[weak-cipher-suites:tls-1.1] [ssl] [low] teksewa.com:443 ["[tls11 TLS_ECDHE_ECDSA_WITH_AES_128_CBC_SHA]"]
+[tech-detect:google-font-api] [http] [info] https://teksewa.com
+[tech-detect:cloudflare] [http] [info] https://teksewa.com
+[rdap-whois:status] [http] [info] https://rdap.verisign.com/com/v1/domain/teksewa.com ["client delete prohibited","client renew prohibited","client transfer prohibited","client update prohibited"]
+[rdap-whois:registrationDate] [http] [info] https://rdap.verisign.com/com/v1/domain/teksewa.com ["2018-09-02T20:32:46Z"]
+[rdap-whois:lastChangeDate] [http] [info] https://rdap.verisign.com/com/v1/domain/teksewa.com ["2025-08-26T20:34:30Z"]
+[rdap-whois:expirationDate] [http] [info] https://rdap.verisign.com/com/v1/domain/teksewa.com ["2026-09-02T20:32:46Z"]
+[rdap-whois:nameServers] [http] [info] https://rdap.verisign.com/com/v1/domain/teksewa.com ["LELAND.NS.CLOUDFLARE.COM","NUCUM.NS.CLOUDFLARE.COM"]
+[rdap-whois:secureDNS] [http] [info] https://rdap.verisign.com/com/v1/domain/teksewa.com ["false"]
+[http-missing-security-headers:strict-transport-security] [http] [info] https://teksewa.com
+[http-missing-security-headers:permissions-policy] [http] [info] https://teksewa.com
+[http-missing-security-headers:x-content-type-options] [http] [info] https://teksewa.com
+[http-missing-security-headers:x-permitted-cross-domain-policies] [http] [info] https://teksewa.com
+[http-missing-security-headers:referrer-policy] [http] [info] https://teksewa.com
+[http-missing-security-headers:clear-site-data] [http] [info] https://teksewa.com
+[http-missing-security-headers:cross-origin-opener-policy] [http] [info] https://teksewa.com
+[http-missing-security-headers:content-security-policy] [http] [info] https://teksewa.com
+[http-missing-security-headers:x-frame-options] [http] [info] https://teksewa.com
+[http-missing-security-headers:cross-origin-embedder-policy] [http] [info] https://teksewa.com
+[http-missing-security-headers:cross-origin-resource-policy] [http] [info] https://teksewa.com
+[google-bucket-service] [http] [info] https://teksewa.com
+[gstorage-detect] [http] [info] https://teksewa.com
+[txt-fingerprint] [dns] [info] teksewa.com [""google-site-verification=NWbpQGjdbfcUH_sMXEjoemGLo5HVk4FJcrC3XCqBQ8U""]
+[mx-fingerprint] [dns] [info] teksewa.com ["30 aspmx3.googlemail.com.","30 aspmx4.googlemail.com.","30 aspmx5.googlemail.com.","10 aspmx.l.google.com.","20 alt1.aspmx.l.google.com.","20 alt2.aspmx.l.google.com.","30 aspmx2.googlemail.com."]
+[mx-service-detector:Google Apps] [dns] [info] teksewa.com
+[nameserver-fingerprint] [dns] [info] teksewa.com ["nucum.ns.cloudflare.com.","leland.ns.cloudflare.com."]
+[caa-fingerprint] [dns] [info] teksewa.com
+[ssl-issuer] [ssl] [info] teksewa.com:443 ["Google Trust Services"]
+[ssl-dns-names] [ssl] [info] teksewa.com:443 ["teksewa.com","*.teksewa.com"]
+[wildcard-tls] [ssl] [info] teksewa.com:443 ["CN: teksewa.com","SAN: [teksewa.com *.teksewa.com]"]

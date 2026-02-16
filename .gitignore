@@ -24,3 +24,9 @@ data/scans/*
 # Secrets
 .env
 config.local.yaml
+
+# Secure example files that should never be committed
+test-apps/secure-example/.env
+test-apps/secure-example/.vault_key
+test-apps/secure-example/vault.json
+test-apps/secure-example/secrets.json

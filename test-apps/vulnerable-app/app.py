@@ -10,6 +10,13 @@ from flask import Flask, request, render_template_string
 
 app = Flask(__name__)
 
+# ════════════════════════════════════════════════════════════════════
+# ⚠️  WARNING: INTENTIONALLY INSECURE CODE BELOW ⚠️
+# This is FAKE test data for security scanner demonstration
+# DO NOT use any of these patterns in production!
+# See test-apps/secure-example/ for proper secret management
+# ════════════════════════════════════════════════════════════════════
+
 # VULNERABILITY 1: Hardcoded credentials
 DATABASE_PASSWORD = "admin123"
 API_KEY = "sk_live_51H8xK2L3m4N5o6P7q8R9s0T"

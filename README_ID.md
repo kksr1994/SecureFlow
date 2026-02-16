@@ -3,11 +3,11 @@
   <a href="https://nuclei.projectdiscovery.io"><img src="static/nuclei-logo.png" width="200px" alt="Nuclei"></a>
 </h1>
 
-<h4 align="center">Fast and customisable vulnerability scanner based on simple YAML based DSL.</h4>
+<h4 align="center">Pemindai kerentanan yang cepat dan dapat disesuaikan berdasarkan DSL berbasis YAML sederhana.</h4>
 
 
 <p align="center">
-<img src="https://img.shields.io/github/go-mod/go-version/projectdiscovery/nuclei">
+<img src="https://img.shields.io/github/go-mod/go-version/projectdiscovery/nuclei?filename=v2%2Fgo.mod">
 <a href="https://github.com/projectdiscovery/nuclei/releases"><img src="https://img.shields.io/github/downloads/projectdiscovery/nuclei/total">
 <a href="https://github.com/projectdiscovery/nuclei/graphs/contributors"><img src="https://img.shields.io/github/contributors-anon/projectdiscovery/nuclei">
 <a href="https://github.com/projectdiscovery/nuclei/releases/"><img src="https://img.shields.io/github/release/projectdiscovery/nuclei">
@@ -18,14 +18,14 @@
 </p>
       
 <p align="center">
-  <a href="#how-it-works">How</a> •
-  <a href="#install-nuclei">Install</a> •
-  <a href="#for-security-engineers">For Security Engineers</a> •
-  <a href="#for-developers-and-organizations">For Developers</a> •
-  <a href="https://docs.projectdiscovery.io/tools/nuclei/">Documentation</a> •
-  <a href="#credits">Credits</a> •
-  <a href="https://nuclei.projectdiscovery.io/faq/nuclei/">FAQs</a> •
-  <a href="https://discord.gg/projectdiscovery">Join Discord</a>
+  <a href="#cara-kerja">Cara Kerja</a> •
+  <a href="#instalasi-nuclei">Instalasi</a> •
+  <a href="#untuk-insinyur-keamanan">Untuk Teknisi Keamanan</a> •
+  <a href="#untuk-pengembang-dan-organisasi">Untuk Pengembang</a> •
+  <a href="https://nuclei.projectdiscovery.io/nuclei/get-started/">Dokumentasi</a> •
+  <a href="#kredit">Kredit</a> •
+  <a href="https://nuclei.projectdiscovery.io/faq/nuclei/">Tanya Jawab</a> •
+  <a href="https://discord.gg/projectdiscovery">Gabung Discord</a>
 </p>
 
 <p align="center">
@@ -37,11 +37,12 @@
 
 ---
 
-Nuclei is used to send requests across targets based on a template, leading to zero false positives and providing fast scanning on a large number of hosts. Nuclei offers scanning for a variety of protocols, including TCP, DNS, HTTP, SSL, File, Whois, Websocket, Headless, Code etc. With powerful and flexible templating, Nuclei can be used to model all kinds of security checks.
+Nuclei digunakan untuk mengirim permintaan lintas target berdasarkan templat, yang menghasilkan nol positif palsu dan menyediakan pemindaian yang cepat pada banyak host. Nuclei menawarkan pemindaian untuk berbagai protokol, termasuk TCP, DNS, HTTP, SSL, File, Whois, Websocket, Headless, dll. Dengan templating yang kuat dan fleksibel, Nuclei dapat digunakan untuk memodelkan semua jenis pemeriksaan keamanan.
 
-We have a [dedicated repository](https://github.com/projectdiscovery/nuclei-templates) that houses various type of vulnerability templates contributed by **more than 300** security researchers and engineers.
+Kami memiliki [repositori khusus](https://github.com/projectdiscovery/nuclei-templates) yang menampung berbagai jenis templat kerentanan yang disumbangkan oleh **lebih dari 300** peneliti dan teknisi keamanan.
 
-## How it works
+
+## Cara Kerja
 
 
 <h3 align="center">
@@ -49,37 +50,15 @@ We have a [dedicated repository](https://github.com/projectdiscovery/nuclei-temp
 </h3>
 
 
-| :exclamation:  **Disclaimer**  |
-|---------------------------------|
-| **This project is in active development**. Expect breaking changes with releases. Review the release changelog before updating. |
-| This project was primarily built to be used as a standalone CLI tool. **Running nuclei as a service may pose security risks.** It's recommended to use with caution and additional security measures. |
+# Instalasi Nuclei
 
-# Install Nuclei
-
-Nuclei requires **go1.21** to install successfully. Run the following command to install the latest version -
+Nuclei membutuhkan **go1.21** agar dapat diinstall. Jalankan perintah berikut untuk menginstal versi terbaru -
 
 ```sh
 go install -v github.com/projectdiscovery/nuclei/v3/cmd/nuclei@latest
 ```
 
-<details>
-  <summary>Brew</summary>
-  
-  ```sh
-  brew install nuclei
-  ```
-  
-</details>
-<details>
-  <summary>Docker</summary>
-  
-  ```sh
-  docker pull projectdiscovery/nuclei:latest
-  ```
-  
-</details>
-
-**More installation [methods can be found here](https://docs.projectdiscovery.io/tools/nuclei/install).**
+**Metode [instalasi lain dapat ditemukan di sini](https://nuclei.projectdiscovery.io/nuclei/get-started/).**
 
 <table>
 <tr>
@@ -87,23 +66,23 @@ go install -v github.com/projectdiscovery/nuclei/v3/cmd/nuclei@latest
 
 ### Nuclei Templates
 
-Nuclei has built-in support for automatic template download/update as default since version [v2.5.2](https://github.com/projectdiscovery/nuclei/releases/tag/v2.5.2). [**Nuclei-Templates**](https://github.com/projectdiscovery/nuclei-templates) project provides a community-contributed list of ready-to-use templates that is constantly updated.
+Nuclei memiliki dukungan untuk unduhan/pembaruan templat otomatis sebagai bawaan sejak versi [v2.5.2](https://github.com/projectdiscovery/nuclei/releases/tag/v2.5.2). Proyek [**Nuclei-Templates**](https://github.com/projectdiscovery/nuclei-templates) menyediakan daftar template siap pakai yang dibuat oleh komunitas yang terus diperbarui.
 
-You may still use the `update-templates` flag to update the nuclei templates at any time; You can write your own checks for your individual workflow and needs following Nuclei's [templating guide](https://docs.projectdiscovery.io/templates/).
+Anda dapat menggunakan flag `-update-templates` untuk memperbarui templat inti kapan saja; Anda juga dapat menulis pemeriksaan Anda sendiri untuk alur kerja individu dan untuk kebutuhan Anda sendiri dengan mengikuti [panduan pembuatan templat Nuclei](https://nuclei.projectdiscovery.io/templating-guide/).
 
-The YAML DSL reference syntax is available [here](SYNTAX-REFERENCE.md).
+Untuk referensi penulisan sintaks DSL berbasis YAML tersedia [di sini](SYNTAX-REFERENCE.md).
 
 </td>
 </tr>
 </table>
 
-### Usage
+### Cara Pakai
 
 ```sh
 nuclei -h
 ```
 
-This will display help for the tool. Here are all the switches it supports.
+Ini akan menampilkan bantuan untuk alat tersebut. Berikut adalah semua flag yang didukungnya.
 
 
 ```console
@@ -115,12 +94,11 @@ Usage:
 
 Flags:
 TARGET:
-   -u, -target string[]             target URLs/hosts to scan
-   -l, -list string                 path to file containing a list of target URLs/hosts to scan (one per line)
-   -eh, -exclude-hosts string[]     hosts to exclude to scan from the input list (ip, cidr, hostname)
-   -resume string                   resume scan using resume.cfg (clustering will be disabled)
-   -sa, -scan-all-ips               scan all the IP's associated with dns record
-   -iv, -ip-version string[]        IP version to scan of hostname (4,6) - (default 4)
+   -u, -target string[]       target URLs/hosts to scan
+   -l, -list string           path to file containing a list of target URLs/hosts to scan (one per line)
+   -resume string             resume scan using resume.cfg (clustering will be disabled)
+   -sa, -scan-all-ips         scan all the IP's associated with dns record
+   -iv, -ip-version string[]  IP version to scan of hostname (4,6) - (default 4)
 
 TEMPLATES:
    -nt, -new-templates                    run only new templates added in latest nuclei-templates release
@@ -142,15 +120,15 @@ FILTERING:
    -tags string[]                     templates to run based on tags (comma-separated, file)
    -etags, -exclude-tags string[]     templates to exclude based on tags (comma-separated, file)
    -itags, -include-tags string[]     tags to be executed even if they are excluded either by default or configuration
-   -id, -template-id string[]         templates to run based on template ids (comma-separated, file, allow-wildcard)
+   -id, -template-id string[]         templates to run based on template ids (comma-separated, file)
    -eid, -exclude-id string[]         templates to exclude based on template ids (comma-separated, file)
    -it, -include-templates string[]   templates to be executed even if they are excluded either by default or configuration
    -et, -exclude-templates string[]   template or template directory to exclude (comma-separated, file)
    -em, -exclude-matchers string[]    template matchers to exclude in result
    -s, -severity value[]              templates to run based on severity. Possible values: info, low, medium, high, critical, unknown
    -es, -exclude-severity value[]     templates to exclude based on severity. Possible values: info, low, medium, high, critical, unknown
-   -pt, -type value[]                 templates to run based on protocol type. Possible values: dns, file, http, headless, tcp, workflow, ssl, websocket, whois, code, javascript
-   -ept, -exclude-type value[]        templates to exclude based on protocol type. Possible values: dns, file, http, headless, tcp, workflow, ssl, websocket, whois, code, javascript
+   -pt, -type value[]                 templates to run based on protocol type. Possible values: dns, file, http, headless, tcp, workflow, ssl, websocket, whois
+   -ept, -exclude-type value[]        templates to exclude based on protocol type. Possible values: dns, file, http, headless, tcp, workflow, ssl, websocket, whois
    -tc, -template-condition string[]  templates to run based on expression condition
 
 OUTPUT:
@@ -160,9 +138,8 @@ OUTPUT:
    -silent                       display findings only
    -nc, -no-color                disable output content coloring (ANSI escape codes)
    -j, -jsonl                    write output in JSONL(ines) format
-   -irr, -include-rr -omit-raw   include request/response pairs in the JSON, JSONL, and Markdown outputs (for findings only) [DEPRECATED use -omit-raw] (default true)
+   -irr, -include-rr             include request/response pairs in the JSON, JSONL, and Markdown outputs (for findings only) [DEPRECATED use -omit-raw] (default true)
    -or, -omit-raw                omit request/response pairs in the JSON, JSONL, and Markdown outputs (for findings only)
-   -ot, -omit-template           omit encoded template in the JSON, JSONL output
    -nm, -no-meta                 disable printing result metadata in cli output
    -ts, -timestamp               enables printing timestamp in cli output
    -rdb, -report-db string       nuclei reporting database (always use this to persist report data)
@@ -193,13 +170,12 @@ CONFIGURATIONS:
    -sml, -show-match-line                show match lines for file templates, works with extractors only
    -ztls                                 use ztls library with autofallback to standard one for tls13 [Deprecated] autofallback to ztls is enabled by default
    -sni string                           tls sni hostname to use (default: input domain name)
-   -dt, -dialer-timeout value            timeout for network requests.
-   -dka, -dialer-keep-alive value        keep-alive duration for network requests.
    -lfa, -allow-local-file-access        allows file (payload) access anywhere on the system
    -lna, -restrict-local-network-access  blocks connections to the local / private network
    -i, -interface string                 network interface to use for network scan
    -at, -attack-type string              type of payload combinations to perform (batteringram,pitchfork,clusterbomb)
    -sip, -source-ip string               source ip address to use for network scan
+   -config-directory string              override the default config path ($home/.config)
    -rsr, -response-size-read int         max response size to read in bytes (default 10485760)
    -rss, -response-size-save int         max response size to read in bytes (default 1048576)
    -reset                                reset removes all nuclei configuration and data files (including nuclei-templates)
@@ -235,28 +211,27 @@ RATE-LIMIT:
    -headc, -headless-concurrency int  maximum number of headless templates to be executed in parallel (default 10)
 
 OPTIMIZATIONS:
-   -timeout int                     time to wait in seconds before timeout (default 10)
-   -retries int                     number of times to retry a failed request (default 1)
-   -ldp, -leave-default-ports       leave default HTTP/HTTPS ports (eg. host:80,host:443)
-   -mhe, -max-host-error int        max errors for a host before skipping from scan (default 30)
-   -te, -track-error string[]       adds given error to max-host-error watchlist (standard, file)
-   -nmhe, -no-mhe                   disable skipping host from scan based on errors
-   -project                         use a project folder to avoid sending same request multiple times
-   -project-path string             set a specific project path (default "/tmp")
-   -spm, -stop-at-first-match       stop processing HTTP requests after the first match (may break template/workflow logic)
-   -stream                          stream mode - start elaborating without sorting the input
-   -ss, -scan-strategy value        strategy to use while scanning(auto/host-spray/template-spray) (default auto)
-   -irt, -input-read-timeout value  timeout on input read (default 3m0s)
-   -nh, -no-httpx                   disable httpx probing for non-url input
-   -no-stdin                        disable stdin processing
+   -timeout int                        time to wait in seconds before timeout (default 10)
+   -retries int                        number of times to retry a failed request (default 1)
+   -ldp, -leave-default-ports          leave default HTTP/HTTPS ports (eg. host:80,host:443)
+   -mhe, -max-host-error int           max errors for a host before skipping from scan (default 30)
+   -te, -track-error string[]          adds given error to max-host-error watchlist (standard, file)
+   -nmhe, -no-mhe                      disable skipping host from scan based on errors
+   -project                            use a project folder to avoid sending same request multiple times
+   -project-path string                set a specific project path (default "/tmp")
+   -spm, -stop-at-first-match          stop processing HTTP requests after the first match (may break template/workflow logic)
+   -stream                             stream mode - start elaborating without sorting the input
+   -ss, -scan-strategy value           strategy to use while scanning(auto/host-spray/template-spray) (default auto)
+   -irt, -input-read-timeout duration  timeout on input read (default 3m0s)
+   -nh, -no-httpx                      disable httpx probing for non-url input
+   -no-stdin                           disable stdin processing
 
 HEADLESS:
-   -headless                        enable templates that require headless browser support (root user on Linux will disable sandbox)
-   -page-timeout int                seconds to wait for each page in headless mode (default 20)
-   -sb, -show-browser               show the browser on the screen when running templates with headless mode
-   -ho, -headless-options string[]  start headless chrome with additional options
-   -sc, -system-chrome              use local installed Chrome browser instead of nuclei installed
-   -lha, -list-headless-action      list available headless actions
+   -headless                    enable templates that require headless browser support (root user on Linux will disable sandbox)
+   -page-timeout int            seconds to wait for each page in headless mode (default 20)
+   -sb, -show-browser           show the browser on the screen when running templates with headless mode
+   -sc, -system-chrome          use local installed Chrome browser instead of nuclei installed
+   -lha, -list-headless-action  list available headless actions
 
 DEBUG:
    -debug                    show all requests and responses
@@ -287,6 +262,7 @@ STATISTICS:
    -stats                    display statistics about the running scan
    -sj, -stats-json          display statistics in JSONL(ines) format
    -si, -stats-interval int  number of seconds to wait between showing a statistics update (default 5)
+   -m, -metrics              expose nuclei metrics on a port
    -mp, -metrics-port int    port to expose nuclei metrics on (default 9092)
 
 CLOUD:
@@ -314,42 +290,121 @@ Run nuclei with sorted Markdown outputs (with environment variables):
 Additional documentation is available at: https://docs.nuclei.sh/getting-started/running
 ```
 
-### Running Nuclei
+### Menjalankan Nuclei
 
-See https://docs.projectdiscovery.io/tools/nuclei/running for details on running Nuclei
+Memindai domain target dengan templat Nuclei yang [dikurasi oleh komunitas](https://github.com/projectdiscovery/nuclei-templates).
 
-### Using Nuclei From Go Code
+```sh
+nuclei -u https://example.com
+```
 
-Complete guide of using Nuclei as Library/SDK is available at [godoc](https://pkg.go.dev/github.com/projectdiscovery/nuclei/v3/lib#section-readme)
+Memindai URL target dengan templat Nuclei yang [dikurasi oleh komunitas](https://github.com/projectdiscovery/nuclei-templates).
+
+```sh
+nuclei -list urls.txt
+```
+
+Contoh dari berkas `urls.txt`:
+
+```yaml
+http://example.com
+http://app.example.com
+http://test.example.com
+http://uat.example.com
+```
+
+**Contoh lebih detil tentang menjalankan Nuclei dapat ditemukan [di sini](https://nuclei.projectdiscovery.io/nuclei/get-started/#running-nuclei).**
+
+# Untuk Teknisi Keamanan
+
+Nuclei menawarkan sejumlah besar fitur yang berguna bagi teknisi keamanan untuk menyesuaikan alur kerja di organisasi mereka. Dengan berbagai kemampuan pemindaian (seperti misalnya DNS, HTTP, TCP), teknisi keamanan dapat dengan mudah membuat rangkaian pemeriksaan khusus mereka dengan Nuclei.
+
+- Berbagai protokol yang didukung: TCP, DNS, HTTP, File, dll
+- Mencapai langkah-langkah kerentanan yang kompleks dengan alur kerja dan [permintaan dinamis](https://blog.projectdiscovery.io/nuclei-unleashed-quickly-write-complex-exploits/).
+- Mudah diintegrasikan ke dalam CI/CD, dirancang agar mudah diintegrasikan ke dalam siklus regresi untuk secara aktif memeriksa perbaikan dan kemunculan kerentanan kembali.
+
+<h1 align="left">
+  <a href="https://nuclei.projectdiscovery.io/nuclei/get-started/"><img src="static/learn-more-button.png" width="170px" alt="Pelajari Selengkapnya"></a>
+</h1>
+
+<table>
+<tr>
+<td>  
+
+**Untuk Pemburu Celah Berhadiah:**
+
+Nuclei memungkinkan Anda untuk menyesuaikan pendekatan pengujian Anda dengan rangkaian pemeriksaan Anda sendiri dan dengan mudah menjalankan program celah berhadiah Anda. Selain itu, Nuclei dapat dengan mudah diintegrasikan ke dalam alur kerja pemindaian berkelanjutan.
+
+- Dirancang agar mudah diintegrasikan ke dalam alur kerja alat lainnya.
+- Dapat memproses ribuan host hanya dalam beberapa menit.
+- Mudah mengotomatiskan pendekatan pengujian khusus Anda dengan sintaks DSL berbasis YAML sederhana kami.
+
+Silakan periksa proyek sumber terbuka kami yang lain yang mungkin cocok dengan alur kerja celah berhadiah Anda: [github.com/projectdiscovery](http://github.com/projectdiscovery), kami juga menyediakan [penyegaran data DNS di Chaos setiap hari](http://chaos.projectdiscovery.io).
+
+</td>
+</tr>
+</table>
+
+<table>
+<tr>
+<td>
+  
+**Untuk Penguji Penetrasi:**
+
+Nuclei sangat meningkatkan cara Anda mendekati penilaian keamanan dengan menambah proses manual yang berulang. Para konsultan sudah mengonversi langkah penilaian manual mereka dengan Nuclei, ini memungkinkan mereka untuk menjalankan serangkaian pendekatan penilaian khusus mereka di ribuan host secara otomatis.
+
+Para penguji penetrasi mendapatkan kekuatan penuh dari templat publik dan kemampuan penyesuaian kami untuk mempercepat proses penilaian mereka, dan khususnya dengan siklus regresi di mana Anda dapat dengan mudah memverifikasi perbaikannya.
+
+- Mudah untuk membuat daftar pemeriksa kepatuhan Anda, sederet standar (mis., OWASP 10 Teratas).
+- Dengan kemampuan seperti [fuzz](https://nuclei.projectdiscovery.io/templating-guide/protocols/http-fuzzing/) dan [alur kerja](https://nuclei.projectdiscovery.io/templating-guide/workflows/), langkah manual yang rumit dan penilaian berulang dapat dengan mudah diotomatisasi dengan Nuclei.
+- Mudah untuk menguji ulang perbaikan kerentanan hanya dengan menjalankan ulang template.
+
+</td>
+</tr>
+</table>
 
 
-### Resources
+# Untuk Pengembang dan Organisasi
 
-You can access the main documentation for Nuclei at https://docs.projectdiscovery.io/tools/nuclei/, and learn more about Nuclei in the cloud with [ProjectDiscovery Cloud Platform](https://cloud.projectdiscovery.io)
+Nuclei dibangun dengan kesederhanaan dalam pemikiran, dengan templat yang didukung komunitas oleh ratusan peneliti keamanan, memungkinkan Anda untuk tidak tertinggal dengan ancaman keamanan terbaru menggunakan pemindaian Nuclei terus menerus pada host. Ini dirancang agar mudah diintegrasikan ke dalam siklus pengujian regresi, untuk memverifikasi perbaikan dan menghilangkan kerentanan agar tidak terjadi di masa mendatang.
 
-See https://docs.projectdiscovery.io/tools/nuclei/resources for more resources and videos about Nuclei!
+- **CI/CD:** Pengembang sudah memanfaatkan Nuclei dalam aliran CI/CD mereka, ini memungkinkan mereka untuk terus memantau lingkungan pementasan dan produksi mereka dengan templat yang disesuaikan.
+- **Siklus Regresi Berkelanjutan:** Dengan Nuclei, Anda dapat membuat templat khusus pada setiap kerentanan baru yang teridentifikasi dan dimasukkan ke dalam mesin Nuclei untuk dihilangkan dalam siklus regresi berkelanjutan.
 
-### Credits
+Kami memiliki [utas diskusi tentang ini](https://github.com/projectdiscovery/nuclei-templates/discussions/693), sudah ada beberapa program celah berhadiah yang memberikan insentif kepada peretas untuk menulis templat inti dengan setiap pengiriman, yang membantu mereka untuk menghilangkan kerentanan di semua aset mereka, serta untuk menghilangkan risiko masa depan yang muncul kembali pada lingkungan produksi. Jika Anda tertarik untuk menerapkannya di organisasi Anda, jangan ragu untuk [menghubungi kami](mailto:contact@projectdiscovery.io). Kami akan dengan senang hati membantu Anda dalam proses memulai, atau Anda juga dapat memposting ke [utas diskusi](https://github.com/projectdiscovery/nuclei-templates/discussions/693) untuk bantuan apapun.
 
-Thanks to all the amazing [community contributors for sending PRs](https://github.com/projectdiscovery/nuclei/graphs/contributors) and keeping this project updated. :heart:
+<h3 align="center">
+  <img src="static/regression-with-nuclei.jpg" alt="Siklus Regresi Berkelanjutan dengan Nuclei" width="1100px"></a>
+</h3>
 
-If you have an idea or some kind of improvement, you are welcome to contribute and participate in the Project, feel free to send your PR.
+<h1 align="left">
+  <a href="https://github.com/projectdiscovery/nuclei-action"><img src="static/learn-more-button.png" width="170px" alt="Pelajari Selengkapnya"></a>
+</h1>
 
-<p align="center">
-<a href="https://github.com/projectdiscovery/nuclei/graphs/contributors">
-  <img src="https://contrib.rocks/image?repo=projectdiscovery/nuclei&max=500">
-</a>
-</p>
+### Sumber Daya
 
+- [Menemukan bug dengan menggunakan Nuclei dengan PinkDraconian (Robbe Van Roey)](https://www.youtube.com/watch?v=ewP0xVPW-Pk) oleh **[@PinkDraconian](https://twitter.com/PinkDraconian)** 
+- [Nuclei: Mengemas Pukulan dengan Pemindaian Kerentanan](https://bishopfox.com/blog/nuclei-vulnerability-scan) oleh **Bishopfox**
+- [Kerangka kemanjuran WAF](https://www.fastly.com/blog/the-waf-efficacy-framework-measuring-the-effectiveness-of-your-waf) oleh **Fastly**
+- [Memindai Aplikasi Web Langsung dengan Nuclei di Aliran CI/CD](https://blog.escape.tech/devsecops-part-iii-scanning-live-web-applications/) oleh **[@TristanKalos](https://twitter.com/TristanKalos)**
+- [Pemindaian Bertenaga Komunitas dengan Nuclei](https://blog.projectdiscovery.io/community-powered-scanning-with-nuclei/)
+- [Nuclei Unleashed - Menulis eksploitasi kompleks dengan cepat](https://blog.projectdiscovery.io/nuclei-unleashed-quickly-write-complex-exploits/)
+- [Nuclei - Fuzz semua hal](https://blog.projectdiscovery.io/nuclei-fuzz-all-the-things/)
+- [Integrasi Nuclei + Interactsh untuk Mengotomatiskan Pengujian OOB](https://blog.projectdiscovery.io/nuclei-interactsh-integration/)
+- [Mempersenjatai Alur Kerja Nuclei untuk Menghancurkan Semua Hal](https://medium.com/@dwisiswant0/weaponizes-nuclei-workflows-to-pwn-all-the-things-cd01223feb77) oleh **[@dwisiswant0](https://github.com/dwisiswant0)**
+- [Bagaimana Memindai Terus-menerus dengan Nuclei?](https://medium.com/@dwisiswant0/how-to-scan-continuously-with-nuclei-fcb7e9d8b8b9) oleh **[@dwisiswant0](https://github.com/dwisiswant0)**
+- [Retas dengan Otomatisasi !!!](https://dhiyaneshgeek.github.io/web/security/2021/07/19/hack-with-automation/) oleh **[@DhiyaneshGeek](https://github.com/DhiyaneshGeek)**
 
-Do also check out the below similar open-source projects that may fit in your workflow:
+### Kredit
+
+Terima kasih kepada semua komunitas yang luar biasa yang [berkontribusi untuk mengirimkan PR](https://github.com/projectdiscovery/nuclei/graphs/contributors). Lihat juga proyek sumber-terbuka serupa di bawah ini yang mungkin sesuai dengan alur kerja Anda:
 
 [FFuF](https://github.com/ffuf/ffuf), [Qsfuzz](https://github.com/ameenmaali/qsfuzz), [Inception](https://github.com/proabiral/inception), [Snallygaster](https://github.com/hannob/snallygaster), [Gofingerprint](https://github.com/Static-Flow/gofingerprint), [Sn1per](https://github.com/1N3/Sn1per/tree/master/templates), [Google tsunami](https://github.com/google/tsunami-security-scanner), [Jaeles](https://github.com/jaeles-project/jaeles), [ChopChop](https://github.com/michelin/ChopChop)
 
-### License
+### Lisensi
 
-Nuclei is distributed under [MIT License](https://github.com/projectdiscovery/nuclei/blob/main/LICENSE.md)
+Nuclei didistribusikan di bawah [Lisensi MIT](https://github.com/projectdiscovery/nuclei/blob/main/LICENSE.md)
 
 <h1 align="left">
-  <a href="https://discord.gg/projectdiscovery"><img src="static/Join-Discord.png" width="380" alt="Join Discord"></a> <a href="https://docs.projectdiscovery.io"><img src="static/check-nuclei-documentation.png" width="380" alt="Check Nuclei Documentation"></a>
+  <a href="https://discord.gg/projectdiscovery"><img src="static/Join-Discord.png" width="380" alt="Join Discord"></a> <a href="https://nuclei.projectdiscovery.io"><img src="static/check-nuclei-documentation.png" width="380" alt="Cek Dokumentasi Nuclei"></a>
 </h1>
