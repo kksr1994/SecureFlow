@@ -329,6 +329,12 @@ MIT License - Copyright (c) 2026 kksr1994
 - Semgrep, Trivy, TruffleHog teams
 - OWASP for security resources
 - Chart.js for visualizations
+-
+<img width="657" height="806" alt="Screenshot 2026-02-16 231544" src="https://github.com/user-attachments/assets/a2a1287a-bac3-4599-9e55-b8999b9bbdac" />
+<img width="698" height="850" alt="Screenshot 2026-02-16 230825" src="https://github.com/user-attachments/assets/bb2abe22-60ae-45f5-ae3b-0ebf736f66d8" />
+<img width="670" height="833" alt="Screenshot 2026-02-16 230818" src="https://github.com/user-attachments/assets/42da88e2-d805-4e7b-9ede-fef4ddad59ca" />
+<img width="647" height="822" alt="Screenshot 2026-02-16 230811" src="https://github.com/user-attachments/assets/9968b096-4ec0-4bfe-8bbd-7f49791682fa" />
+
 
 ---
 
