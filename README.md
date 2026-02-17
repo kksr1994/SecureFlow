@@ -319,8 +319,8 @@ MIT License - Copyright (c) 2026 kksr1994
 ## 👨‍💻 Author
 
 **kksr1994** - Security Enthusiast & Developer
-- GitHub: [@kksr1994](https://github.com/kksr1994)
-- Project: [SecureFlow](https://github.com/kksr1994/SecureFlow)
+- GitHub: [@Kali-ai007](https://github.com/kksr1994)
+- Project: [SecureFlow](https://github.com/Kali-ai007/SecureFlow)
 
 ---
 
