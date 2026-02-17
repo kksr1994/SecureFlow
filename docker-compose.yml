@@ -1,0 +1,14 @@
+version: '3.8'
+
+services:
+  secureflow:
+    build: .
+    container_name: secureflow
+    ports:
+      - "5000:5000"
+    volumes:
+      - ./data/scans:/app/data/scans
+      - ./target:/app/target:ro
+    environment:
+      - FLASK_ENV=production
+    restart: unless-stopped
